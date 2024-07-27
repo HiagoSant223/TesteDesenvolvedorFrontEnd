@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
 
-  const [cnpj, setCnpj] = useState('');
+  const [cnpj, setCnpj] = useState();
   const [infoData, setInfoData] = useState(null);
 
   const handleInputChange = (e) => {
@@ -22,10 +22,16 @@ function App() {
   return (
     <>
     <div className='cotainer'>
-      <h1 className='text-6xl'>Consulte o CNPJ</h1>
-      <input type='text'
-      id='cnpj-inout'
-      placeholder='Degite o CNPJ'></input>
+      <h1 className='text-6xl'>Consulte de CNPJ</h1>
+      <div>
+        <input
+        type='number'
+        value={cnpj}
+        onChange={handleInputChange}
+        placeholder='Degite o CNPJ'></input>
+        <button onClick={handleInputSubmit}>Consultar</button>
+      </div>
+      {infoData && <QuadroSocio data={infoData} />}
     </div>
     </>
   )
