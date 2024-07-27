@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css'
+import CardSocio from './components/CardSocio';
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
         placeholder='Degite o CNPJ'></input>
         <button onClick={handleInputSubmit}>Consultar</button>
       </div>
-      {infoData && <QuadroSocio data={infoData} />}
+      {infoData && <CardSocio data={infoData} />}
     </div>
     </>
   )
