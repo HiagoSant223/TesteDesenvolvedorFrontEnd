@@ -1,15 +1,13 @@
-
-interface Empresa {
-  nome: string;
-  qualificacao: string;
-}
+import React from 'react';
 
 interface CompanyData {
-  nome_fantasia: string;
+  cnpj: string;
   razao_social: string;
-  data_abertura: string;
-  situacao: string;
-  atividade_principal: { text: string }[];
+  nome_fantasia: string;
+  descricao_situacao_cadastral: string;
+  data_situacao_cadastral: string;
+  data_inicio_atividade: string;
+  cnae_fiscal_descricao: string;
   logradouro: string;
   numero: string;
   complemento: string;
@@ -17,9 +15,7 @@ interface CompanyData {
   municipio: string;
   uf: string;
   cep: string;
-  telefone: string;
-  email: string;
-  qsa: Empresa[];
+  ddd_telefone_1: string;
 }
 
 interface Props {
@@ -28,48 +24,44 @@ interface Props {
 
 const EmpresaData: React.FC<Props> = ({ data }) => {
   return (
-    <>
-      <div id="result-container">
+    <div id="result-container">
       <div className="result-item">
-        <label>Nome Fantasia:</label>
-        <input type="text" defaultValue={data.nome_fantasia || ''} />
+        <label>CNPJ:</label>
+        <input type="text" defaultValue={data.cnpj} readOnly />
       </div>
       <div className="result-item">
         <label>Razão Social:</label>
-        <input type="text" defaultValue={data.razao_social || ''} readOnly />
+        <input type="text" defaultValue={data.razao_social} readOnly />
       </div>
       <div className="result-item">
-        <label>Data de Abertura:</label>
-        <input type="text" defaultValue={data.data_abertura || ''} readOnly />
+        <label>Nome Fantasia:</label>
+        <input type="text" defaultValue={data.nome_fantasia} />
       </div>
       <div className="result-item">
-        <label>Situação:</label>
-        <input type="text" defaultValue={data.situacao || ''} readOnly />
+        <label>Situação Cadastral:</label>
+        <input type="text" defaultValue={data.descricao_situacao_cadastral} readOnly />
+      </div>
+      <div className="result-item">
+        <label>Data de Situação Cadastral:</label>
+        <input type="text" defaultValue={data.data_situacao_cadastral} readOnly />
+      </div>
+      <div className="result-item">
+        <label>Data de Início de Atividade:</label>
+        <input type="text" defaultValue={data.data_inicio_atividade} readOnly />
       </div>
       <div className="result-item">
         <label>Atividade Principal:</label>
-        <input type="text" defaultValue={data.atividade_principal[0].text || ''} readOnly />
+        <input type="text" defaultValue={data.cnae_fiscal_descricao} readOnly />
       </div>
       <div className="result-item">
         <label>Endereço Completo:</label>
-        <input type="text" defaultValue={`${data.logradouro}, ${data.numero} ${data.complemento}, ${data.bairro}, ${data.municipio} - ${data.uf}, ${data.cep}` || ''} readOnly />
+        <input type="text" defaultValue={`${data.logradouro}, ${data.numero} ${data.complemento}, ${data.bairro}, ${data.municipio} - ${data.uf}, ${data.cep}`} readOnly />
       </div>
       <div className="result-item">
         <label>Telefone:</label>
-        <input type="text" defaultValue={data.telefone || ''} readOnly />
+        <input type="text" defaultValue={data.ddd_telefone_1} readOnly />
       </div>
-      <div className="result-item">
-        <label>Email:</label>
-        <input type="text" defaultValue={data.email || ''} readOnly />
-      </div>
-      {data.qsa && data.qsa.map((partner, index) => (
-        <div key={index} className="card">
-          <h3>{partner.nome}</h3>
-          <p>Qualificação: {partner.qualificacao}</p>
-        </div>
-      ))}
     </div>
-    </>
   );
 }
 
