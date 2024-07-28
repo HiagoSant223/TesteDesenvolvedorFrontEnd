@@ -1,6 +1,7 @@
 import { useState } from "react";
 import EmpresaData from "./EmpresaData";
 import CardSocio from "./CardSocio";
+import CompanyData from "../Interface/CompanyData";
 
 function Input() {
   const [cnpj, setCnpj] = useState<string>("");
