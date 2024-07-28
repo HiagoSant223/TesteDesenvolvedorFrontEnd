@@ -26,7 +26,7 @@ interface Props {
   data: CompanyData;
 }
 
-const CardSocio: React.FC<Props> = ({ data }) => {
+const EmpresaData: React.FC<Props> = ({ data }) => {
   return (
     <>
       <div id="result-container">
@@ -73,4 +73,4 @@ const CardSocio: React.FC<Props> = ({ data }) => {
   );
 }
 
-export default CardSocio;
+export default EmpresaData;

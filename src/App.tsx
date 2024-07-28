@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css'
-import CardSocio from './components/CardSocio';
+import CardSocio from './components/EmpresaData';
 
 interface CompanyData {
   nome_fantasia: string;
