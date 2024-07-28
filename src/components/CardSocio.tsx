@@ -1,3 +1,5 @@
+import CardEmpresa from "./CardEmpresa";
+
 function CardSocio({ data }) {
   return (
     <>
@@ -40,8 +42,7 @@ function CardSocio({ data }) {
         <label>Email:</label>
         <input type="text" defaultValue={data.email || ""} readOnly />
       </div>
-      {data.qsa &&
-        data.qsa.map((empresa, index) => (
+      {data.qsa && data.qsa.map((empresa, index) => (
           <CardEmpresa key={index} empresa={empresa} />
         ))}
     </>
