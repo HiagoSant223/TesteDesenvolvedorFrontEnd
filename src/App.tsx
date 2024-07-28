@@ -1,11 +1,12 @@
-import './App.css';
+import "./App.css";
+import Input from "./components/Input";
 
 function App() {
-
   return (
-    <div className='container'>
-      <h1 className='text-6xl'>Consulta de CNPJ</h1>
-    </div>
+    <>
+      <h1>Teste App</h1>
+      <Input />
+    </>
   );
 }
 
