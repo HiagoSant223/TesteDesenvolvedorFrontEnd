@@ -11,8 +11,8 @@ interface Props {
 
 const CardSocio: React.FC<Props> = ({ partners }) => {
   return (
-    <div className='bg-slate-300 p-6 space-y-4 rounded-xl'>
-      <div>
+    <div className='bg-indigo-700 p-6 space-y-4 rounded-xl'>
+      <div className='text-white'>
         <h1 className='text-xl font-bold mb-4 text-center'>Confira os sócios da empresa</h1>
       </div>
       {partners.map((partner, index) => (

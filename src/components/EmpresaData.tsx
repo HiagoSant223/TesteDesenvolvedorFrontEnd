@@ -7,8 +7,8 @@ interface Props {
 
 const EmpresaData: React.FC<Props> = ({ data }) => {
   return (
-    <div className="bg-slate-300 p-6 space-y-4 rounded-xl">
-      <div>
+    <div className="bg-indigo-700 p-6 space-y-4 rounded-xl">
+      <div className='text-white'>
         <h1 className="text-xl font-bold mb-4 text-center">Confira os dados da empresa pesquisada</h1>
       </div>
       <div className="bg-gray-100 border border-gray-300 rounded-lg p-4">
