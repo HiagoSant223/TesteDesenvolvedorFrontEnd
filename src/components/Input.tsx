@@ -23,12 +23,12 @@ function Input() {
   };
 
   return (
-    <div className="w-full h-screen bg-white flex flex-col">
+    <div className="w-full h-full bg-white flex flex-col">
       <div className="w-full bg-indigo-700 p-4 flex flex-col items-center">
         <h1 className="text-6xl text-center text-white font-extralight mb-4">
           CNPJ CONSULTA
         </h1>
-        <div className="flex w-full max-w-4xl space-x-12"> {/* Ajuste o espaço aqui */}
+        <div className="flex w-full max-w-4xl space-x-12 items-center justify-between">
           <div className="flex-1 text-white">
             <h2 className="text-xl font-semibold mb-2">Consulta CNPJ</h2>
             <p>
@@ -37,7 +37,7 @@ function Input() {
             </p>
           </div>
           
-          <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md">
+          <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md w-full max-w-xs">
             <div className="relative w-full mb-4">
               <div className="absolute text-black left-3 top-1/2 transform -translate-y-1/2">
                 <FaSearch />
@@ -69,7 +69,7 @@ function Input() {
       </div>
       <div className="flex-1 pt-8 flex flex-col items-center overflow-y-auto">
         {infoData ? (
-          <div className="flex w-full max-w-6xl space-x-12"> {/* Ajuste o espaço aqui */}
+          <div className="flex w-full max-w-6xl space-x-12">
             <div className="flex-grow">
               <div className="w-full">
                 <EmpresaData data={infoData} />
