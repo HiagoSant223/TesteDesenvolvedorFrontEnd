@@ -22,14 +22,15 @@ function Input() {
   };
 
   return (
-    <div className="w-full h-screen bg-[#20303C] flex flex-col">
-      <div className="fixed top-0 left-0 w-full bg-[#20303C] p-4 flex flex-col items-center z-10">
-        <h1 className="text-6xl text-center text-white font-extralight">
+    <div className="w-full h-screen bg-white flex flex-col">
+      {/* Remove a posição fixa aqui */}
+      <div className="w-full bg-white p-4 flex flex-col items-center">
+        <h1 className="text-6xl text-center text-black font-extralight">
           CNPJ CONSULTA
         </h1>
         <div className="flex items-center space-x-4 w-full max-w-3xl mt-4">
           <div className="relative w-full flex items-center">
-            <div className="absolute text-white left-3">
+            <div className="absolute text-black left-3">
               <FaSearch />
             </div>
             <input
@@ -37,27 +38,29 @@ function Input() {
               value={cnpj}
               onChange={handleInputChange}
               placeholder="Digite o CNPJ sem pontuação"
-              className="text-white bg-transparent border pl-10 p-2 rounded-lg w-full"
+              className="text-black bg-transparent border pl-10 p-2 rounded-lg w-full"
             />
           </div>
           <button
             onClick={handleInputSubmit}
-            className="p-2 bg-white text-black rounded"
+            className="p-2 bg-black text-white rounded"
           >
             Consultar
           </button>
         </div>
       </div>
-      <div className="pt-32 flex-1 overflow-y-auto">
-        {infoData && (
-          <div className="mt-8">
-            <div className="">
+      <div className="flex-1 pt-8 flex flex-col items-center overflow-y-auto">
+        {infoData ? (
+          <div className="flex flex-col items-center space-y-8 w-full max-w-4xl">
+            <div className="w-full">
               <EmpresaData data={infoData} />
             </div>
-            <div className="p-4 ">
+            <div className="w-full">
               <CardSocio partners={infoData.qsa} />
             </div>
           </div>
+        ) : (
+          <p className="text-black">Digite um CNPJ e clique em Consultar.</p>
         )}
       </div>
     </div>
