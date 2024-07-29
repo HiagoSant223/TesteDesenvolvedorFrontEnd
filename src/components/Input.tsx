@@ -24,21 +24,21 @@ function Input() {
   return (
     <div className="container mx-auto flex flex-col items-center mt-8">
       <div className="titulo mb-4">
-        <h1 className="text-6xl text-center text-white">CNPJ CONSULTA</h1>
+        <h1 className="text-6xl text-center text-white font-extralight">
+          CNPJ CONSULTA
+        </h1>
       </div>
       <div className="flex items-center space-x-4 w-3/5">
-        <div className="relative w-full">
-          <div className="absolute rounded-full inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <div className="text-white">
-              <FaSearch />
-            </div>
+        <div className="relative w-full flex items-center">
+          <div className="absolute text-white left-3">
+            <FaSearch />
           </div>
           <input
             type="text"
             value={cnpj}
             onChange={handleInputChange}
             placeholder="Digite o CNPJ"
-            className="text-white pl-10 p-2 border-0 rounded-lg bg-transparent shadow-input-focus ring-offset-input-focus w-full"
+            className="text-white bg-transparent border pl-10 p-2 rounded-lg w-full my-10 "
           />
         </div>
         <button
