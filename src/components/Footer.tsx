@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
         <div className="flex items-center mb-4 md:mb-0">
           <img src={Logo} alt="Logo" className="w-24 h-auto mr-3" />
-          <p className="text-lg font-semibold">Seu Negócio Sustentável</p>
+          <p className="text-lg font-semibold">CNPJ Consulte</p>
         </div>
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
           <a href="/" className="hover:underline">
@@ -52,7 +52,7 @@ const Footer = () => {
       </div>
       <div className="text-center text-sm mt-4">
         <p>
-          &copy; {new Date().getFullYear()} Seu Negócio Sustentável. Todos os
+          &copy; {new Date().getFullYear()} CNPJ Consulte. Todos os
           direitos reservados.
         </p>
       </div>

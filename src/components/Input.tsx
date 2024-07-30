@@ -31,7 +31,7 @@ function Input() {
       >
         <div className="w-full bg-opacity-50 p-4 flex flex-col items-center text-white font-extralight">
           <h1 className="text-4xl md:text-6xl text-center  mb-4">
-            CNPJ CONSULTA
+            CNPJ CONSULTE
           </h1>
           <h2 className="font-bold">
             Consulte o cartão CNPJ, o comprovante de inscrição e a situação
@@ -49,7 +49,7 @@ function Input() {
                   value={cnpj}
                   onChange={handleInputChange}
                   placeholder="Digite o CNPJ sem pontuação"
-                  className="text-black bg-transparent border pl-10 p-2 rounded-lg w-full"
+                  className="text-black bg-transparent border pl-10 p-2 rounded-lg w-full font-mono"
                 />
               </div>
               <button
