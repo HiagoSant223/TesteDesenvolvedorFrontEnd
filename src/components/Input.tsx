@@ -4,6 +4,7 @@ import CardSocio from "./CardSocio";
 import CompanyData from "../Interface/CompanyData";
 import { FaSearch } from "react-icons/fa";
 import Logo from "../assets/logo.jpeg";
+import BackgroundImage from "../assets/fundo-input.jpg";
 
 function Input() {
   const [cnpj, setCnpj] = useState<string>("");
@@ -24,59 +25,64 @@ function Input() {
 
   return (
     <div className="w-full h-full bg-white flex flex-col">
-      <div className="w-full bg-indigo-700 p-4 flex flex-col items-center">
-        <h1 className="text-6xl text-center text-white font-extralight mb-4">
-          CNPJ CONSULTA
-        </h1>
-        <div className="flex w-full max-w-4xl space-x-12 items-center justify-between">
-          <div className="flex-1 text-white">
-            <h2 className="text-xl font-semibold mb-2">Consulta CNPJ</h2>
-            <p>
-              Consulte o cartão CNPJ, o comprovante de inscrição e a situação cadastral de uma empresa,
-              de forma rápida e gratuita, com o consultor de CNPJ.
-            </p>
-          </div>
-          
-          <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md w-full max-w-xs">
-            <div className="relative w-full mb-4">
-              <div className="absolute text-black left-3 top-1/2 transform -translate-y-1/2">
-                <FaSearch />
+      <div
+        className="w-full p-4 flex flex-col items-center bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${BackgroundImage})` }}
+      >
+        <div className="w-full bg-opacity-50 p-4 flex flex-col items-center">
+          <h1 className="text-6xl text-center text-white font-extralight mb-4">
+            CNPJ CONSULTA
+          </h1>
+          <div className="flex w-full max-w-4xl space-x-12 items-center justify-between">
+            <div className="flex-1 text-white">
+              <h2 className="text-xl font-semibold mb-2">Consulta CNPJ</h2>
+              <p>
+                Consulte o cartão CNPJ, o comprovante de inscrição e a situação cadastral de uma empresa,
+                de forma rápida e gratuita, com o consultor de CNPJ.
+              </p>
+            </div>
+            
+            <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md w-96">
+              <div className="relative w-full mb-4">
+                <div className="absolute text-black left-3 top-1/2 transform -translate-y-1/2">
+                  <FaSearch />
+                </div>
+                <input
+                  type="text"
+                  value={cnpj}
+                  onChange={handleInputChange}
+                  placeholder="Digite o CNPJ sem pontuação"
+                  className="text-black bg-transparent border pl-10 p-2 rounded-lg w-full"
+                />
               </div>
-              <input
-                type="text"
-                value={cnpj}
-                onChange={handleInputChange}
-                placeholder="Digite o CNPJ sem pontuação"
-                className="text-black bg-transparent border pl-10 p-2 rounded-lg w-full"
+              <button
+                onClick={handleInputSubmit}
+                className="p-2 bg-black text-white rounded w-full"
+              >
+                Consultar
+              </button>
+            </div>
+
+            <div className="flex-shrink-0">
+              <img
+                src={Logo}
+                alt="Descrição da Imagem"
+                className="w-64 h-auto rounded-lg shadow-md"
               />
             </div>
-            <button
-              onClick={handleInputSubmit}
-              className="p-2 bg-black text-white rounded w-full"
-            >
-              Consultar
-            </button>
-          </div>
-
-          <div className="flex-shrink-0">
-            <img
-              src={Logo}
-              alt="Descrição da Imagem"
-              className="w-64 h-auto rounded-lg shadow-md"
-            />
           </div>
         </div>
       </div>
-      <div className="flex-1 pt-8 flex flex-col items-center overflow-y-auto">
+      <div className="flex-1 pt-8 flex flex-col items-center overflow-auto w-full">
         {infoData ? (
           <div className="flex w-full max-w-6xl space-x-12">
             <div className="flex-grow">
-              <div className="w-full">
+              <div className="w-full h-full">
                 <EmpresaData data={infoData} />
               </div>
             </div>
             <div className="flex-grow">
-              <div className="w-full">
+              <div className="w-full h-full">
                 <CardSocio partners={infoData.qsa} />
               </div>
             </div>
