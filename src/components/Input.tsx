@@ -29,20 +29,17 @@ function Input() {
         className="w-full p-4 flex flex-col items-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${BackgroundImage})` }}
       >
-        <div className="w-full bg-opacity-50 p-4 flex flex-col items-center">
-          <h1 className="text-6xl text-center text-white font-extralight mb-4">
+        <div className="w-full bg-opacity-50 p-4 flex flex-col items-center text-white font-extralight">
+          <h1 className="text-4xl md:text-6xl text-center  mb-4">
             CNPJ CONSULTA
           </h1>
-          <div className="flex w-full max-w-4xl space-x-12 items-center justify-between">
-            <div className="flex-1 text-white">
-              <h2 className="text-xl font-semibold mb-2">Consulta CNPJ</h2>
-              <p>
-                Consulte o cartão CNPJ, o comprovante de inscrição e a situação cadastral de uma empresa,
-                de forma rápida e gratuita, com o consultor de CNPJ.
-              </p>
-            </div>
-            
-            <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md w-96">
+          <h2 className="font-bold">
+            Consulte o cartão CNPJ, o comprovante de inscrição e a situação
+            cadastral de uma empresa, de forma rápida e gratuita, com o
+            consultor de CNPJ.
+          </h2>
+          <div className="flex flex-col lg:flex-row w-full max-w-4xl space-y-8 lg:space-y-0 lg:space-x-12 items-center justify-between">
+            <div className="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow-md w-full max-w-md">
               <div className="relative w-full mb-4">
                 <div className="absolute text-black left-3 top-1/2 transform -translate-y-1/2">
                   <FaSearch />
@@ -63,11 +60,11 @@ function Input() {
               </button>
             </div>
 
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full max-w-xs">
               <img
                 src={Logo}
                 alt="Descrição da Imagem"
-                className="w-64 h-auto rounded-lg shadow-md"
+                className="w-full h-auto rounded-lg shadow-md"
               />
             </div>
           </div>
@@ -75,16 +72,12 @@ function Input() {
       </div>
       <div className="flex-1 pt-8 flex flex-col items-center overflow-auto w-full">
         {infoData ? (
-          <div className="flex w-full max-w-6xl space-x-12">
-            <div className="flex-grow">
-              <div className="w-full h-full">
-                <EmpresaData data={infoData} />
-              </div>
+          <div className="flex flex-col w-full max-w-6xl space-y-12">
+            <div className="w-full">
+              <EmpresaData data={infoData} />
             </div>
-            <div className="flex-grow">
-              <div className="w-full h-full">
-                <CardSocio partners={infoData.qsa} />
-              </div>
+            <div className="w-full">
+              <CardSocio partners={infoData.qsa} />
             </div>
           </div>
         ) : (
