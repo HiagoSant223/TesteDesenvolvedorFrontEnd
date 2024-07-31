@@ -19,7 +19,7 @@ function Input() {
       fetch(`https://brasilapi.com.br/api/cnpj/v1/${cnpj}`)
         .then((response) => response.json())
         .then((data) => setInfoData(data))
-        .catch((error) => console.error("Erro:", error));
+        .catch((error) => console.error("Erro ao realizar requisição GET:", error));
     }
   };
 
@@ -70,7 +70,7 @@ function Input() {
           </div>
         </div>
       </div>
-      <div className="flex-1 pt-8 flex flex-col items-center overflow-auto w-full">
+      <div className="flex-1 pt-8 flex flex-col items-center overflow-auto w-full bg-slate-300">
         {infoData ? (
           <div className="flex flex-col w-full max-w-6xl space-y-12">
             <div className="w-full">

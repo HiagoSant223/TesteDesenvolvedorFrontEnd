@@ -20,6 +20,9 @@
 
 ## Funcionalidades
 
+- **VLibras**
+  - O VLibras Widget é um recurso de acessibilidade desenvolvido para tornar páginas web acessíveis para pessoas surdas. Com a tradução automática de Português Brasileiro para a Língua Brasileira de Sinais (LIBRAS), essa ferramenta permite que usuários surdos sejam capazes de consumir conteúdos de texto em qualquer website.
+
 - **Campo para consulta de CNPJ**
   - Permite a entrada do número do CNPJ para consulta.
 - **Consumindo API: BrasilAPI**
